@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>New Page</title>
+    <style>
+
+        .btn{
+            background-color: blue;
+            transition: background-color 1s ease 2s;
+        }
+        .btn:hover{
+            background-color: red;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            transition:transform 1s ease-in,background-color 1s ease-out;
+            animation: rotate 2s linear infinite;
+        }
+        .box:hover{
+            transform:scale(1.5) rotate(360deg) translate(-500px);
+            background-color: yellow;
+
+        }
+
+        @keyframes rotate{
+            from{
+                transform:  scale(1) rotate(0deg);
+            }
+            to{
+                transform:  scale(1.5) rotate(360deg);
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the New Page</h1>
+    <p>This is a new page created for demonstration purposes.</p>
+    <button class="btn">click me</button>
+    <div class="box">
+
+    </div>
+</body>
+</html>
