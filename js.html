@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let i; //declare
+      // i=90 ;//assignment of value
+
+      // console.log(i)
+
+      const i = 90;
+      let a = 10;
+      let b = 20;
+      b = b + a;
+      b -= a;
+      b *= a;
+
+      console.log(b);
+      console.log(i);
+
+      // .. const need to be asigned a value at the time of declaration
+      const obj = {
+        //key and value
+        name: "akshat",
+        age: 25,
+        phone: 1234567,
+        isActive: true,
+      };
+
+      obj.name = "anil";
+      obj.email = "akshat2gmail.com";
+      console.log(obj);
+
+      // == means loosly equals to  it only compares the values
+      //=== means tightly equals to. but it compares the values and as weall as the data type
+      console.log(5 === "5");
+
+      console.log(5 !== "5");
+
+      console.log("5" + 5);
+
+      console.log(String(123));
+
+      console.log(Number("123"));
+
+      // controle flow statemensts in javascript
+      // if else staements and ternery operators
+
+    //   if (obj.age > 28) {
+    //     console.log("you have right to vote");
+    //   } else {
+    //     console.log("you are underage");
+    //   }
+      obj.age>28?console.log("you have right to vote"):console.log("you are underage")
+      //elseif we use when we have multiple conditions
+
+      let marks = 115;
+
+      if (marks <= 55) {
+        console.log("grade d");
+      } else if (marks <= 70) {
+        console.log("grade c");
+      } else if (marks <= 90) {
+        console.log("grade b");
+      } else if (marks <= 100) {
+        console.log("grade a");
+      } else {
+        console.log("wrong input");
+      }
+
+      console.log(Number("A"));
+      //switch
+
+      let day = 22;
+      switch (day) {
+        case 1:
+          console.log("Monday");
+          break;
+
+        case 2:
+          console.log("Tuesday");
+          break;
+
+        default:
+          console.log("wrong");
+      }
+
+      
+    </script>
+  </body>
+</html>
