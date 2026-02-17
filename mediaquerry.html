@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+
+            height: 100px;
+            width: 100px;
+            background: url("first.png");
+            background-size:cover ;
+
+
+        }
+        @media (min-width:100px) and (max-width:500px) {
+           .container{
+             background: url("second.jpg");
+             background-size: cover;
+           
+           }
+            
+        }
+
+        .child{
+            height: 100px;
+            width: 100px;
+            background-color: aliceblue;
+            border: 2px solid black;
+            
+        }
+        .grid{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 100px 100px 100px 100px
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+
+    <div class="grid">
+        <div class="child">a</div>
+        <div class="child">b</div>
+        <div class="child">c</div>
+        <div class="child">d</div>
+        <div class="child">a</div>
+        <div class="child">b</div>
+        <div class="child">c</div>
+        <div class="child">d</div>
+    </div>
+    
+</body>
+</html>
