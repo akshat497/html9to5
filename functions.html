@@ -76,6 +76,107 @@
 
         // console.log(addition())
 
+        //arrow functions are those functions which reduces our code and if we want to return something then we can just type it in same line with out the return keyword
+
+
+        // let add=(a,b)=>a+b
+        
+
+        // console.log(add(10,10))
+         //destructuring
+
+        // let obj={
+        //     name:"akshat",
+        //     age:24,
+        //     phone:1234
+        //  }
+        //  const {name,age,phone}=obj
+
+
+        //  console.log(name,phone,age)
+
+
+
+        // function abc(a,b,c,d){
+
+        // }
+
+
+
+        // abc(12,23)
+       //...rest operator
+    //    let student={
+    //     name:"vikas",
+    //     age:24,
+    //     email:"abc@gmail.com",
+    //     phone:1234
+    //    }
+    //  const {name,...rest}=student;
+    //    console.log(rest)
+
+    // let arr=["akshat",12,34,55,66]
+
+    // const [zero,first,...rest]=arr;
+    // console.log(rest)
+       
+            //   function addition({a,b,c,d="saini"}){
+
+            //     console.log("a",a,"b",b,"c",c,"d",d)
+
+            //   }
+
+
+            //   addition({b:20,c:50,a:10,d:"vikram"})
+        //higer order functions
+
+
+
+        // function xyz(...rest){
+
+        //     console.log(rest)
+
+        // }
+
+        //  xyz(1,2,3,4);
+         //HOF is a function function which takes another function as a argument
+
+
+
+        //  function greet(name){
+        //     return "hello "+name
+        //  }
+
+        //  function processUser(name ,callBack){
+      
+        //     return callBack(name)
+
+        //  }
+
+        //  console.log(processUser("Akshat",greet))
+
+
+
+        //forEach
+        let marks=[44,55,66,22,77,88]
+    //    marks.forEach(function(value,index,fun){
+
+    //         value=value+1
+    //         console.log(value,fun)
+    //     })
+    //     console.log(marks)
+
+    //map
+
+//    let values= marks.map(function(value,index,fun){
+
+//             return value+1
+//         })
+//              console.log(marks)
+//              console.log(values)
+
+
+marks.map((value)=>value+1)
+       
     </script>
     
 </body>
