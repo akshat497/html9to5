@@ -68,6 +68,90 @@
 
     // });
 
+   let array=[3,4,1,2,5]
+
+
+    array.forEach(function(value,index,array){
+        array[index]=value+1
+    })
+
+    console.log(array)
+
+   let newArray=array.map(function(value,index,array){
+        return value+2
+    })
+    console.log(array)
+    console.log(newArray)
+
+    //what does map do?
+    //map creates a new array by performing some operations on each element
+    //  of the original array and it returns the new array and it does not modify the original array
+    //what does forEach do?
+    //forEach does not create a new array and it does not 
+    // return anything it just performs some operations on each element 
+    // of the original array and it modifies the original array if we change the value
+
+//    let filteredArray=array.filter(function(value,index,array){
+//         return value>4
+//     })
+//     console.log(filteredArray)
+
+    //whtat does filter do?
+    //filter creates a new array by performing some operations on each element of
+    //  the original array and it returns only those elements which satisfy the condition 
+    // provided in the callback function it does not modify the original array
+
+    //reduce method
+    // let sum=array.reduce(function(accumulator,currentValue,index,array){
+    //     console.log("accumulator",accumulator,"currentValue",currentValue)
+    //     return accumulator+currentValue
+    // },)
+
+    // console.log(sum)
+//   found=  array.find(function(value,index,array){
+//         return value>25
+//     })
+//     console.log(found)
+
+    //what does reduce do?
+    //reduce method reduces the array to a single value by performing some operations on each element of the original array and it returns the single value and it does not modify the original array
+    //the first parameter of the callback function is the accumulator which accumulates the value and the second parameter is the current value which is the current element of the array and the third parameter is the index of the current element and the fourth parameter is the original array and the second parameter of the reduce method is the
+    //initial value of the accumulator which is optional if we do not provide it then the first element of the array will be taken as the initial value of the accumulator and the reduce method will start from the second element of the array
+    
+    //sorting in arrays
+
+    // array.sort(function(a,b){
+    //     return a-b
+    // })
+    // console.log(array)
+
+    // let contacts=[
+    //     {name:"akshat",phone:1234},
+    //     {name:"vikas",phone:5678},
+    //     {name:"rahul",phone:9101},
+    //     {name:"vishal",phone:8970},
+        
+    // ]
+
+    // searchValue=prompt("enter the name to search")
+    // console.log(searchValue)
+    //                //                                               1 vi.              vikas
+    // let filteredContacts=contacts.filter((value,index,array)=> value.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())|| value.phone.toString().includes(searchValue))
+    // console.log(filteredContacts)
+
+    //what does sort do?
+    //sort method sorts the elements of the array in place 
+    // and it returns the sorted array and it modifies the 
+    // original array and it takes a callback function which 
+    // is used to determine the order of the elements and the 
+    // callback function takes two parameters which are the two 
+    // elements to be compared and it should return a negative value 
+    // if the first element should be before the second element and 
+    // it should return a positive value if the first element should 
+    // be after the second element and it should return 0 if the order 
+    // of the two elements is not important and if we do not provide a 
+    // callback function then the elements will be sorted in ascending order 
+    // by converting them to strings and comparing their sequences of UTF-16 code units values
     </script>
     
 </body>

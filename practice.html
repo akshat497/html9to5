@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array=[2,12,44,59,105,65,10,2]
+        //find the laegest number in the array
+        let largest=array[0]
+        let secondLargest=array[0]
+        for (let i=0;i<array.length;i++){
+            if(array[i]>largest){
+                
+                largest=array[i]
+            }if(array[i]>secondLargest && array[i]<largest){
+                secondLargest=array[i]
+            }
+        }
+        console.log(largest)
+        console.log(secondLargest)
+
+        let sum=0;
+
+        for (let i=0; i<array.length;i++){
+            sum=sum*array[i]
+        }
+        console.log(sum)
+        let reversed_array=[]
+for (let i=array.length-1; i>=0;i--){
+    reversed_array.push(array[i])
+    
+}
+console.log(reversed_array)
+
+let number=2134
+
+string_number=number.toString()
+let reversed_string=""
+for (let i=string_number.length-1; i>=0;i--){
+    reversed_string=reversed_string+string_number[i]
+    
+}
+console.log(reversed_string)
+
+    </script>
+    
+</body>
+</html>
