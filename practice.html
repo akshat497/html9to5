@@ -103,6 +103,52 @@ let chr_count={}
             break
         }
     }
+  //program to reverse a number
+    let number=1234;
+
+    let reverse=0;
+   while(number>0){
+
+    let last_digit=number%10
+    reverse=reverse*10+last_digit
+    number=Math.floor(number/10)
+   }
+   console.log(reverse)
+   //program to build a right angle triangle
+   
+    let rows=5;
+    for (let i=1;i<=rows;i++){
+        let pattern=" "
+        for (let j=1;j<=i;j++){
+            pattern=pattern+"@"
+        }
+        console.log(pattern)
+    }
+
+  
+    //proramm to reverse print right angle triangle
+    let rows2=5;
+    for (let i=rows2;i>=1;i--){
+        let pattern=""
+        for (let j=1;j<=i;j++){
+            pattern=pattern+"*"
+            
+        }
+       
+        console.log(pattern)
+    }
+    //print mirror image of right angle triangle
+    let rows3=5;
+    for (let i=1;i<=rows3;i++){
+        let pattern=""
+        for (let j=1;j<=rows3-i;j++){
+            pattern=pattern+" "
+        }
+        for (let k=1;k<=i;k++){
+            pattern=pattern+"#"
+        }
+        console.log(pattern)
+    }
     </script>
     
 </body>
