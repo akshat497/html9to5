@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         let array=[2,12,44,59,105,65,10,2]
+      //         //find the laegest number in the array
+      //         let largest=array[0]
+      //         let secondLargest=array[0]
+      //         for (let i=0;i<array.length;i++){
+      //             if(array[i]>largest){
+
+      //                 largest=array[i]
+      //             }if(array[i]>secondLargest && array[i]<largest){
+      //                 secondLargest=array[i]
+      //             }
+      //         }
+      //         console.log(largest)
+      //         console.log(secondLargest)
+
+      //         let sum=0;
+
+      //         for (let i=0; i<array.length;i++){
+      //             sum=sum*array[i]
+      //         }
+      //         console.log(sum)
+      //         let reversed_array=[]
+      // for (let i=array.length-1; i>=0;i--){
+      //     reversed_array.push(array[i])
+
+      // }
+      // console.log(reversed_array)
+
+      // let number=2134
+
+      // string_number=number.toString()
+      // let reversed_string=""
+      // for (let i=string_number.length-1; i>=0;i--){
+      //     reversed_string=reversed_string+string_number[i]
+
+      // }
+      // console.log(reversed_string)
+
+      //faltten an array
+      let nested_array = [[1, 2], [3, 4], [5, 6], 7, 8, 9];
+      let flattened_array = [];
+
+      for (let i of nested_array) {
+        if (Array.isArray(i)) {
+          flattened_array.push(...i);
+        } else {
+          flattened_array.push(i);
+        }
+      }
+      console.log(flattened_array);
+      //count occurance in an array
+
+      let array = [1, 2, 2, 3, 3, 4, 4];
+      let count = {};
+
+      for (let i of array) {
+        if (count[i]) {
+          count[i]++;
+        } else {
+          count[i] = 1;
+        }
+      }
+      console.log(count);
+      //remove duplicates from an array
+      // let unique=[]
+      // for (let i in count){
+      //     unique.push(i)
+      // }
+
+      // let unique=new Set(array)
+
+      let newarray = [1, 2, 3, 4, 3, 2, 1, 2, 2];
+      let unique = [];
+
+      for (let i of newarray) {
+        if (!unique.includes(i)) {
+          unique.push(i);
+        }
+      }
+      console.log(unique);
+      let string = "aabbcdeff";
+      let chr_count = {};
+
+      for (let i of string) {
+        if (chr_count[i]) {
+          chr_count[i]++;
+        } else {
+          chr_count[i] = 1;
+        }
+      }
+      for (let i in chr_count) {
+        if (chr_count[i] == 1) {
+          console.log(i);
+          break;
+        }
+      }
+      //program to reverse a number
+      let number = 1234;
+
+      let reverse = 0;
+      while (number > 0) {
+        let last_digit = number % 10;
+        reverse = reverse * 10 + last_digit;
+        number = Math.floor(number / 10);
+      }
+      console.log(reverse);
+      //program to build a right angle triangle
+
+      let rows = 5;
+      for (let i = 1; i <= rows; i++) {
+        let pattern = " ";
+        for (let j = 1; j <= i; j++) {
+          pattern = pattern + "@";
+        }
+        console.log(pattern);
+      }
+
+      //proramm to reverse print right angle triangle
+      let rows2 = 5;
+      for (let i = rows2; i >= 1; i--) {
+        let pattern = "";
+        for (let j = 1; j <= i; j++) {
+          pattern = pattern + "*";
+        }
+
+        console.log(pattern);
+      }
+      //print mirror image of right angle triangle
+      let rows3 = 5;
+      for (let i = 1; i <= rows3; i++) {
+        let pattern = " ";
+
+        for (let k = 1; k <= rows3 - i; k++) {
+          pattern = pattern + " ";
+        }
+        for (let j = 1; j <= 2 * i - 1; j++) {
+          pattern = pattern + "@";
+        }
+        console.log(pattern);
+      }
+
+      let string2 = "akshat@saini@akshat@saini@abhay@abhay@abhay";
+      function advanceSplit(text, delimiter) {
+        let newString = "";
+        let splitted_string = [];
+        let string_count = {};
+        let count = 0;
+
+        for (let i = 0; i < text.length; i++) {
+          if (text[i] === delimiter) {
+            splitted_string.push(newString);
+            if (string_count[newString]) {
+              string_count[newString]++;
+            } else {
+              string_count[newString] = 1;
+            }
+
+            newString = "";
+          } else {
+            newString = newString + text[i];
+          }
+          if (i == text.length - 1) {
+            if (string_count[newString]) {
+              string_count[newString]++;
+            } else {
+              string_count[newString] = 1;
+            }
+            splitted_string.push(newString);
+          }
+        }
+        return [splitted_string, string_count];
+      }
+      console.log(advanceSplit(string2, "@"));
+    </script>
+  </body>
+</html>
