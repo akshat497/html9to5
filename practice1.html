@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // let array=[21,222,3,4,5,33,321];
+        // let max=-Infinity
+        // let secondMax=-Infinity
+       
+        // for (let i=0;i<array.length;i++){
+        //     if(array[i]>max){
+        //         secondMax=max;
+        //         max=array[i];
+        //     }else if(array[i]>secondMax){
+        //         secondMax=array[i];
+        //     }
+        // }
+        // console.log("max",max)                
+        // console.log("secondMax",secondMax)
+
+       // do sorting without using sort method
+        let array=[21,222,3,4,5,33,321];
+        for (let i=0; i<array.length;i++){
+            debugger
+            //steps1: compare 0 and 1, if 0 is greater than 1, swap them.
+            for (let j=0;j<array.length;j++){
+                if (array[j]>array[j+1]){
+                    let temp=array[j];
+                    array[j]=array[j+1];
+                    array[j+1]=temp;
+                }
+               
+                    
+            }
+        }
+         console.log(array)
+
+    </script>
+    
+</body>
+</html>

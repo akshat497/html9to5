@@ -9,11 +9,9 @@
         display: flex;
         justify-content: space-evenly;
         margin: 1%;
-
       }
       .navbarHeight {
         height: 30px;
-        
       }
     </style>
   </head>
@@ -30,15 +28,15 @@
         <button onclick="sort()" style="height: 30px">Sort</button>
       </div>
       <div>
-        <input type="color" id="color"  style="height: 24px;"/>
+        <input type="color" id="color" style="height: 24px" />
         <button onclick="setColor()" class="navbarHeight">set</button>
-         <select id="select" class="navbarHeight">
-      <option>True</option>
-      <option>False</option>
-    </select>
+        <select id="select" class="navbarHeight">
+          <option>True</option>
+          <option>False</option>
+        </select>
       </div>
     </div>
-   
+
     <table border="1" style="width: 100%">
       <tr>
         <th>userId</th>
@@ -273,24 +271,23 @@
         );
         const data = await response.json(); //json method is used to convert the response into json format. it also returns a promise which can be resolved using then method.
         console.log("data", data);
-         fetchData(data);
-         return data;
-
+        fetchData(data);
+        return data;
       }
 
       getData();
 
       async function fetchData(data) {
         console.log(data);
-     
+
         const tableBody = document.getElementById("tbody");
 
         for (i of data) {
           const row = document.createElement("tr");
           row.id = i.id;
           row.style.cursor = "pointer";
-          row.style.fontSize="20px"
-          
+          row.style.fontSize = "20px";
+
           const userId = document.createElement("td");
           const id = document.createElement("td");
           const title = document.createElement("td");
@@ -301,53 +298,46 @@
           title.innerText = i.title;
           completed.innerText = i.completed;
 
-
           row.append(userId, id, title, completed);
           row.addEventListener("dblclick", function () {
             Bold(this);
           });
 
           row.addEventListener("mouseover", function () {
-           
             this.style.backgroundColor = "lightgray";
           });
 
-           row.addEventListener("mouseout", function () {
+          row.addEventListener("mouseout", function () {
             this.style.backgroundColor = "white";
           });
           tableBody.append(row);
         }
-       
+
         return data;
       }
 
       fetchData();
-  async function sort(){
-   
-    data=await getData()
-     let tableBody=document.getElementById("tbody")
-    tableBody.innerHTML=""
-    let sorted=data.sort((a,b)=> {
-      console.log(a.id)
-      console.log(b.id)
-
-      return Number(b.id)-Number(a.id)
-    })
-     fetchData(sorted)
-  }
-      async function Bold(row){
-       
-         if (row.style.fontWeight=="bold"){
-            row.style.fontWeight="normal"
-            row.style.color="black"
-             row.style.fontSize= "20px"
-         }else{
-             row.style.fontWeight="bold"
-             row.style.color="red"
-             row.style.fontSize="25px"
-         }
-       
-
+      async function sort() {
+        let data = await getData();
+        let tableBody = document.getElementById("tbody");
+        tableBody.innerHTML = "";
+        let sorted = data.sort((a, b) => {
+         
+        //  return a.title.localeCompare(b.title);
+          return Number(b.id) - Number(a.id);
+        });
+        fetchData(sorted);
+      }
+      async function Bold(row) {
+        if (row.style.fontWeight == "bold") {
+          row.style.fontWeight = "normal";
+          row.style.color = "black";
+          row.style.fontSize = "20px";
+        } else {
+          row.style.fontWeight = "bold";
+          row.style.color = "red";
+          row.style.fontSize = "25px";
+        }
       }
 
       async function search() {
@@ -361,7 +351,7 @@
           alert("Please enter an id greater then 1 to search");
           return;
         }
-        if (!Number(searchedValue) ) {
+        if (!Number(searchedValue)) {
           alert("Please enter an  id in number format to search");
           return;
         }
@@ -422,6 +412,9 @@
         console.log(rows);
         fetchData();
       }
+
+      
+
     </script>
   </body>
 </html>
