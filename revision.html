@@ -1,146 +1,218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
+      //object are key and value pairs
+      //array are ordered collection of data
+      // let person={
+      //     name:"john",
+      //     age:30,
+      //     city:"new york"
+      // }
+      //functions are reusable blocks of code that perform a specific task
 
-        //object are key and value pairs
-        //array are ordered collection of data
-        // let person={
-        //     name:"john",
-        //     age:30,
-        //     city:"new york"
-        // }
-        //functions are reusable blocks of code that perform a specific task
-        
-        //function declaration
-    //     function print(){
-    //     console.log("akshat")
-    //    }
+      //function declaration
+      //     function print(){
+      //     console.log("akshat")
+      //    }
 
-    //    //function calling
-    //    print()
-    //    print()
-    //    print()
-    //    print()
-    //    print()
-    //    print()
-     
+      //    //function calling
+      //    print()
+      //    print()
+      //    print()
+      //    print()
+      //    print()
+      //    print()
 
-    // types of functions
+      // types of functions
 
-    // returning function
-    // parameterized function
-    // selfcalling function
-    // arrow function
+      // returning function
+      // parameterized function
+      // selfcalling function
+      // arrow function
 
-    //parameters are the variables that are defined in the function declaration and are used to receive 
-    // the values when the function is called. arguments are the values that are passed to the 
-    // function when it is called.
-    function add(a,b){
-       console.log(a+b)
-    }
+      //parameters are the variables that are defined in the function declaration and are used to receive
+      // the values when the function is called. arguments are the values that are passed to the
+      // function when it is called.
+      function add(a, b) {
+        console.log(a + b);
+      }
 
-  add(3,4) //arguments
-  add(5,6)
-    add(7,8)
-    add(9,10);
-    //rest operators
-    // let array=[1,2,3,4,5]
+      add(3, 4); //arguments
+      add(5, 6);
+      add(7, 8);
+      add(9, 10);
+      //rest operators
+      // let array=[1,2,3,4,5]
 
-     //destructuring array
-    // const [a,b,...c]=array;
+      //destructuring array
+      // const [a,b,...c]=array;
 
-    // console.log(a,b,c)
+      // console.log(a,b,c)
 
-    //parameter types
-    //1. required parameters
-    //2. optional parameters
-    //3. default parameters
-    //4. rest parameters
-    //5. spread parameters
+      //parameter types
+      //1. required parameters
+      //2. optional parameters
+      //3. default parameters
+      //4. rest parameters
+      //5. spread parameters
 
-    //rest parameters
-    // function sum(...sum){
-    //     console.log(sum)
-    // }
-    //  sum(1,2,3,4,5);
+      //rest parameters
+      // function sum(...sum){
+      //     console.log(sum)
+      // }
+      //  sum(1,2,3,4,5);
 
-    //requires parameters are the parameters that are required to be passed when the function is called. if the required parameters are not passed, it will throw an error.
-    function multiply(a,b){
-        console.log(a*b)
-    }
-    multiply(3,4) //arguments
-    //optional parameters are the parameters that are not required to be passed when the function is called. if the optional parameters are not passed, it will not throw an error and will return undefined.
-    function divide(a,b=1){
-        console.log(a/b)
-    }
-    divide(10,2) //arguments
-    divide(10) //arguments
+      //requires parameters are the parameters that are required to be passed when the function is called. if the required parameters are not passed, it will throw an error.
+      function multiply(a, b) {
+        console.log(a * b);
+      }
+      multiply(3, 4); //arguments
+      //optional parameters are the parameters that are not required to be passed when the function is called. if the optional parameters are not passed, it will not throw an error and will return undefined.
+      function divide(a, b = 1) {
+        console.log(a / b);
+      }
+      divide(10, 2); //arguments
+      divide(10); //arguments
 
+      //object is key and value pairs
+      let student = {
+        name: "akshat",
+        age: 30,
+        city: "new york",
+      };
 
-    //object is key and value pairs
-    let student={
-        name:"akshat",
-        age:30,
-        city:"new york"
+      const { age, ...rest } = student;
+      console.log(age, rest);
+
+      let firstarray = [1, 2, 3, 4, 2, 5];
+      let secondarray = [6, 7, 8, 9, 10];
+      console.log(...firstarray, ...secondarray);
+
+      //array functions
+      // appending an element to an array
+      //push
+      //pop
+      //shift
+      //unshift
+      //splice
+      //slice
+      //concat
+      //indexOf
+      //lastIndexOf
+      //includes
+      //find
+      //findIndex
+
+      //filter
+
+      //map
+      //reduce
+      //forEach
+      //sort
+      //reverse
+
+      //  pushing manually in array
+
+      let array = [1, 2, 3, 4, 5];
+      //  array.unshift(44) //removes the first element of the array and returns it
+      //  console.log(array)
+
+      for (let i = 0; i <= array.length; i++) {
+        if (array[i] == array.length) {
+          array[i] = 44;
         }
+      }
+      console.log(array);
+      array.splice(2, 2, 55); //removes the element at index 2 and adds 55 at index 2
+      console.log(array);
 
-        const {age,...rest}=student;
-        console.log(age,rest)
+      console.log(array.includes(535)); //returns true if 55 is present in the array, otherwise returns false
 
+      const restArray = [1, 2, 3, 4, 5];
 
-        let firstarray=[1,2,3,4,2,5]
-        let secondarray=[6,7,8,9,10]
-        console.log(...firstarray,...secondarray);
+      // this is spread operator
 
+      //   const {a,v,e,...spread}=restArray;
+      //   console.log(spread)
 
- 
-         //array functions
-         // appending an element to an array
-         //push
-         //pop
-         //shift
-         //unshift
-         //splice
-         //slice
-         //concat
-         //indexOf
-         //lastIndexOf
-         //includes
-         //find
-         //findIndex
+      //   function rest(...collect){
 
-         //filter
+      //   }
 
-         //map
-         //reduce
-         //forEach
-         //sort
-         //reverse
+      //   rest(1,2,3,4);
 
-        //  pushing manually in array 
+      //hof.   hoc
 
+      //higher order functions are those function as a argument it takes function
+      //or a function returning a function
 
-         let array=[1,2,3,4,5]
-        //  array.unshift(44) //removes the first element of the array and returns it
-        //  console.log(array)
+      function one(a, b) {
+        return a + b;
+      }
+      function two(a, b, c) {
+        console.log(c);
+        return c(a, b);
+      }
 
+      console.log(two(10, 20, one));
 
-        for (let i=0;i<=array.length;i++){
-            if(array[i]==array.length){
-                array[i]=44
-            }
+      //  (setTimeout(() => {
+
+      //     alert("please buy this")
+
+      //  }, 10000))
+      let i = 0;
+
+      const id = setInterval(() => {
+        console.log(i++);
+      }, 2000);
+
+      setTimeout(() => {
+        clearInterval(id);
+      }, 10000);
+
+      let findArray = [1, 2, 3, 4, 5, 6, 7, 8, 5, 9, 5, 5, 10];
+
+      //loosesly equal to
+      const store = findArray.find((a) => a == 5);
+
+      const filterStore = findArray.filter((a) => a == 5);
+
+      console.log(filterStore);
+      console.log(store);
+
+      const students = [
+        { id: 1, name: "Aman", age: 20, course: "BCA", marks: 78 },
+        { id: 2, name: "Neha", age: 21, course: "MCA", marks: 85 },
+        { id: 3, name: "Rahul", age: 19, course: "BBA", marks: 67 },
+        { id: 4, name: "Priya", age: 22, course: "MBA", marks: 90 },
+        { id: 5, name: "Karan", age: 20, course: "BTech", marks: 72 },
+        { id: 6, name: "Simran", age: 21, course: "BCA", marks: 88 },
+        { id: 7, name: "Vikas", age: 23, course: "MCA", marks: 60 },
+        { id: 8, name: "Anjali", age: 20, course: "BSc", marks: 81 },
+        { id: 9, name: "Rohit", age: 22, course: "BCom", marks: 75 },
+        { id: 10, name: "Pooja", age: 19, course: "BA", marks: 69 },
+      ];
+      const searchedValue="bba";
+    //   const stored=students.filter((a)=>a.course.toLowerCase().includes(searchedValue.toLowerCase()))
+      
+    const stored=students.filter(
+
+        function(a){
+            return a.course.toLowerCase().includes(searchedValue.toLowerCase())
         }
-        console.log(array)
-         array.splice(2,2,55) //removes the element at index 2 and adds 55 at index 2
-            console.log(array)
-
-          console.log(  array.includes(535)) //returns true if 55 is present in the array, otherwise returns false
-    </script>
     
-</body>
+    
+    )
+ console.log(stored)
+
+   
+    </script>
+  </body>
+</html>
