@@ -5,5 +5,28 @@
   justify-content:space-around;
   font-size: calc(10px + 2vmin);
   color: white;
+  border: 2px solid green;
 
+}
+#footer{
+   display: flex;
+  background-color: gray;
+  align-items: center;
+  justify-content:space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border: 2px solid red;
+
+}
+
+#toDoBox{
+  display: flex;
+  height: 400px;
+  width: 400px;
+  background-color: lightcyan;
+  align-items: center;
+  justify-content:space-around;
+  font-size: calc(10px + 2vmin);
+
+  border: 2px solid green;
 }
