@@ -413,7 +413,31 @@
         fetchData();
       }
 
-      
+
+      let string5="akshat saini is a good boy saini is a good"
+      let splitted_string=[]
+      let temp=""
+      for (let i=0;i<string5.length;i++){
+         temp=temp+string5[i] //string5[0]=>a temp=a + string5[1]=>ak temp=aks temp=aks + string5[2]=>aksh temp=aksh + string5[3]=>aksha temp=aksha + string5[4]=>akshat 
+
+        if(string5[i]==" " || i==string5.length-1){
+          splitted_string.push(temp)
+          temp=""
+        }
+      }
+      console.log("splitted_string",splitted_string)
+    //   let splitted_string=string5.split(" ")
+    //   console.log("splitted_string",splitted_string)
+    //  let count_string={}
+    //  count_string["akshat"]=0
+    //  for (let i of splitted_string){
+    //   if(count_string[i]){
+    //     count_string[i]++
+    //   }else{
+    //     count_string[i]=1
+    //   }
+    //  }
+    //   console.log(count_string)
 
     </script>
   </body>
