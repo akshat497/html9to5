@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "username": "akash01",
+    "email": "akash01@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "username": "priya02",
+    "email": "priya02@example.com",
+    "password": "pass1234",
+    "role": "admin",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "username": "rahul03",
+    "email": "rahul03@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "username": "sneha04",
+    "email": "sneha04@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": false
+  },
+  {
+    "id": 5,
+    "username": "vikas05",
+    "email": "vikas05@example.com",
+    "password": "pass1234",
+    "role": "manager",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "username": "neha06",
+    "email": "neha06@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "username": "rohit07",
+    "email": "rohit07@example.com",
+    "password": "pass1234",
+    "role": "admin",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "username": "anjali08",
+    "email": "anjali08@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": false
+  },
+  {
+    "id": 9,
+    "username": "karan09",
+    "email": "karan09@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "username": "pooja10",
+    "email": "pooja10@example.com",
+    "password": "pass1234",
+    "role": "manager",
+    "isActive": true
+  },
+  {
+    "id": 11,
+    "username": "manish11",
+    "email": "manish11@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 12,
+    "username": "ritu12",
+    "email": "ritu12@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": false
+  },
+  {
+    "id": 13,
+    "username": "amit13",
+    "email": "amit13@example.com",
+    "password": "pass1234",
+    "role": "admin",
+    "isActive": true
+  },
+  {
+    "id": 14,
+    "username": "komal14",
+    "email": "komal14@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 15,
+    "username": "deepak15",
+    "email": "deepak15@example.com",
+    "password": "pass1234",
+    "role": "manager",
+    "isActive": true
+  },
+  {
+    "id": 16,
+    "username": "megha16",
+    "email": "megha16@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 17,
+    "username": "sumit17",
+    "email": "sumit17@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": false
+  },
+  {
+    "id": 18,
+    "username": "nisha18",
+    "email": "nisha18@example.com",
+    "password": "pass1234",
+    "role": "admin",
+    "isActive": true
+  },
+  {
+    "id": 19,
+    "username": "tarun19",
+    "email": "tarun19@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 20,
+    "username": "simran20",
+    "email": "simran20@example.com",
+    "password": "pass1234",
+    "role": "user",
+    "isActive": true
+  }
+]
