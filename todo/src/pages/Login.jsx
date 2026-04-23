@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Login.css";
 import users from "../users.json";
 import { useNavigate } from "react-router-dom";
+import { userContext } from "../context/Context";
 export default function Login({user,setUser}) {
      let navigate=useNavigate()
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-   
+         const {name, setName} = useContext(userContext)
   function LoginUser() {
 
   users.find((user) => {
@@ -26,7 +27,7 @@ export default function Login({user,setUser}) {
     <div id="container">
       {" "}
       <div id="login-container">
-        <h2>Login</h2>
+        <h2>Login {name}</h2>
         <input
           type="text"
           placeholder="username"
