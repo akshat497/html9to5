@@ -12,6 +12,20 @@ export default function HomePage({ user }) {
   //       return state
   //   }
   // }
+  async function getUsers(){
+   try{
+     let res = await fetch("htt://jsonplaceholder.typicode.com/usrs");
+    let data = await res.json();
+    console.log(data);
+   }
+   catch(err){
+    console.log("Error fetching users:", err);
+   }
+  }
+
+  useEffect(() => {
+    getUsers();
+  }, []);
   const { tasks, settasks } = useContext(userContext);
   const [userinput, setUserInput] = React.useState("");
   const [isEditing, setIsEditing] = React.useState({
@@ -49,21 +63,20 @@ export default function HomePage({ user }) {
   useEffect(() => {
     tasks.map((task, i) => {
       if (i === isEditing.index) {
-        setUserInput(task);
+        setUserInput(task.task);
       }
     });
   }, [isEditing]);
 
   function updateTask() {
-    settasks(
-      tasks.map((task, i) => {
+     let updated= tasks.map((task, i) => {
         console.log(isEditing.index);
         if (i === isEditing.index) {
-          return userinput;
+          return {...task, task: userinput};
         }
         return task;
-      }),
-    );
+      })
+    settasks([...updated]);
     setIsEditing({ state: false, index: null });
     setUserInput("");
   }
@@ -136,6 +149,7 @@ export default function HomePage({ user }) {
           );
         })}
       </div>
+
     </center>
   );
 }
