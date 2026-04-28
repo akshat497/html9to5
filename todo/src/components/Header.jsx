@@ -1,5 +1,5 @@
 
-export default function Header({user}) {
+export default function Header(props) {
  
 
     function logOut(){
@@ -15,7 +15,7 @@ export default function Header({user}) {
         <div>about</div>
         <div>home</div>
         {
-           user&&(
+           props.user&&(
             <button onClick={logOut}>Logout</button>
            )
         }
