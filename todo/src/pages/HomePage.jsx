@@ -48,7 +48,9 @@ export default function HomePage({ user }) {
   function deleteTodo(index) {
     settasks(tasks.filter((task, i) => i !== index));
   }
-
+function abc(){
+  console.log("abc");
+}
   function completeTodo(id) {
     let updatedTasks = tasks.map((task) => {
 
