@@ -26,21 +26,37 @@ export default function HomePage({ user }) {
   useEffect(() => {
     getUsers();
   }, []);
-  const { tasks, settasks } = useContext(userContext);
+  const { tasks, settasks, addToLocalStorage, getFromLocalStorage} = useContext(userContext);
   const [userinput, setUserInput] = React.useState("");
   const [isEditing, setIsEditing] = React.useState({
     state: false,
     index: null,
   });
+ 
+ 
+  useEffect(() => {
+    let user = getFromLocalStorage("user");
+    let tasks = getFromLocalStorage(`tasks-${user.id}`);
+    console.log(tasks);
+    if (user && tasks ) {
+      settasks(getFromLocalStorage(`tasks-${user.id}`)|| []);
+    }else{
+      settasks([])
+    }
+  }, []);
 
   function addTask() {
 
+   let user= getFromLocalStorage("user")
     let task={
       id:tasks.length + 1,
       task:userinput,
       isCompleted:false
     }
+    
     settasks([...tasks, task]);
+    addToLocalStorage(`tasks-${user.id}`, [...tasks, task]);
+
     setUserInput("");
   }
   console.log(tasks);
@@ -48,9 +64,7 @@ export default function HomePage({ user }) {
   function deleteTodo(index) {
     settasks(tasks.filter((task, i) => i !== index));
   }
-function abc(){
-  console.log("abc");
-}
+
   function completeTodo(id) {
     let updatedTasks = tasks.map((task) => {
 
@@ -79,6 +93,7 @@ function abc(){
         return task;
       })
     settasks([...updated]);
+    addToLocalStorage(`tasks-${user.id}`, [...updated]);
     setIsEditing({ state: false, index: null });
     setUserInput("");
   }
@@ -113,7 +128,7 @@ function abc(){
           )}
         </div>
 
-        {tasks.map((task, index) => {
+        {tasks?.map((task, index) => {
           return (
             <div
               key={index}

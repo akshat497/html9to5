@@ -16,7 +16,7 @@ export default function Header(props) {
         <div>home</div>
         {
            props.user&&(
-            <button onClick={logOut}>Logout</button>
+            <button onClick={logOut} style={{background:"red" ,padding:"2%", borderRadius:"10px", color:"white" ,fontWeight:"bolder"}}>Logout</button>
            )
         }
       </div>
