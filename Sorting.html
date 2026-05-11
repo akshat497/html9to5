@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="SortProducts()" id="sortButton">Asc</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      let count = 1;
+      let tbody = document.getElementById("tbody");
+      let products=[
+  {
+    "id": 17,
+    "name": "Dining Table",
+    "category": "Furniture",
+    "price": 14999,
+    "stock": 4,
+    "brand": "Ikea",
+    "rating": 4.3
+  },
+  {
+    "id": 3,
+    "name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "price": 1599,
+    "stock": 22,
+    "brand": "Boat",
+    "rating": 4.2
+  },
+  {
+    "id": 41,
+    "name": "Wallet",
+    "category": "Accessories",
+    "price": 699,
+    "stock": 36,
+    "brand": "Wildcraft",
+    "rating": 4.1
+  },
+  {
+    "id": 9,
+    "name": "Office Chair",
+    "category": "Furniture",
+    "price": 6999,
+    "stock": 12,
+    "brand": "GreenSoul",
+    "rating": 4.6
+  },
+  {
+    "id": 28,
+    "name": "Wall Clock",
+    "category": "Home",
+    "price": 499,
+    "stock": 33,
+    "brand": "Ajanta",
+    "rating": 4.0
+  },
+  {
+    "id": 50,
+    "name": "Air Purifier",
+    "category": "Appliances",
+    "price": 10999,
+    "stock": 6,
+    "brand": "Dyson",
+    "rating": 4.8
+  },
+  {
+    "id": 12,
+    "name": "Notebook",
+    "category": "Stationery",
+    "price": 99,
+    "stock": 200,
+    "brand": "Classmate",
+    "rating": 4.6
+  },
+  {
+    "id": 36,
+    "name": "Formal Shirt",
+    "category": "Fashion",
+    "price": 1399,
+    "stock": 32,
+    "brand": "Van Heusen",
+    "rating": 4.5
+  },
+  {
+    "id": 5,
+    "name": "Casual T-Shirt",
+    "category": "Fashion",
+    "price": 599,
+    "stock": 60,
+    "brand": "H&M",
+    "rating": 4.1
+  },
+  {
+    "id": 22,
+    "name": "Dumbbell Set",
+    "category": "Fitness",
+    "price": 3499,
+    "stock": 10,
+    "brand": "Kore",
+    "rating": 4.5
+  },
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "price": 799,
+    "stock": 45,
+    "brand": "LogiTech",
+    "rating": 4.3
+  },
+  {
+    "id": 44,
+    "name": "Router",
+    "category": "Electronics",
+    "price": 1899,
+    "stock": 23,
+    "brand": "TP-Link",
+    "rating": 4.3
+  },
+  {
+    "id": 14,
+    "name": "Air Conditioner",
+    "category": "Appliances",
+    "price": 32999,
+    "stock": 5,
+    "brand": "LG",
+    "rating": 4.7
+  },
+  {
+    "id": 31,
+    "name": "Tablet",
+    "category": "Electronics",
+    "price": 18999,
+    "stock": 8,
+    "brand": "Lenovo",
+    "rating": 4.5
+  },
+  {
+    "id": 7,
+    "name": "Smart Watch",
+    "category": "Electronics",
+    "price": 3999,
+    "stock": 20,
+    "brand": "Noise",
+    "rating": 4.3
+  },
+  {
+    "id": 48,
+    "name": "Bean Bag",
+    "category": "Furniture",
+    "price": 2999,
+    "stock": 9,
+    "brand": "Solimo",
+    "rating": 4.3
+  },
+  {
+    "id": 19,
+    "name": "Hair Dryer",
+    "category": "Beauty",
+    "price": 1299,
+    "stock": 16,
+    "brand": "Havells",
+    "rating": 4.1
+  },
+  {
+    "id": 25,
+    "name": "Perfume",
+    "category": "Beauty",
+    "price": 1499,
+    "stock": 20,
+    "brand": "Fogg",
+    "rating": 4.0
+  },
+  {
+    "id": 34,
+    "name": "USB Cable",
+    "category": "Electronics",
+    "price": 299,
+    "stock": 90,
+    "brand": "Ambrane",
+    "rating": 4.0
+  },
+  {
+    "id": 11,
+    "name": "Coffee Mug",
+    "category": "Kitchen",
+    "price": 299,
+    "stock": 100,
+    "brand": "Cello",
+    "rating": 4.2
+  }
+]
+      let copy = [...products];
+
+      function SortProducts() {
+        let sortButton = document.getElementById("sortButton");
+        if (count == 1) {
+          tbody.innerHTML = "";
+          let sorted = products.sort((a, b) => a.id - b.id);
+          DisplayData(sorted);
+          sortButton.innerText = "Desc";
+          count = 2;
+        } else if (count == 2) {
+          tbody.innerHTML = "";
+          let sorted = products.sort((a, b) => b.id - a.id);
+          DisplayData(sorted);
+          sortButton.innerText = "Original";
+          count = 3;
+        } else if (count == 3) {
+          tbody.innerHTML = "";
+          DisplayData();
+          sortButton.innerText = "Asc";
+          count = 1;
+        }
+      }
+
+      function DisplayData(mainData) {
+        if (mainData === undefined) {
+          mainData = copy;
+        }
+        mainData.map((product) => {
+          let row = document.createElement("tr");
+//===============================================================================================
+          let id = document.createElement("td");
+          let Name = document.createElement("td");
+          let Category = document.createElement("td");
+          let Price = document.createElement("td");
+          let Stock = document.createElement("td");
+
+          id.innerText = product.id;
+          Name.innerText = product.name;
+          Category.innerText = product.category;
+          Price.innerText = product.price;
+          Stock.innerText = product.stock;
+
+          row.append(id, Name, Category, Price, Stock);
+          tbody.append(row);
+        });
+      }
+      DisplayData(products);
+    </script>
+  </body>
+</html>

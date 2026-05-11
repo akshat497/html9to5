@@ -6,6 +6,7 @@
     <title>Document</title>
   </head>
   <body>
+     <button onclick="sortProducts()">asc/dsc</button>
     <script>
       //object are key and value pairs
       //array are ordered collection of data
@@ -330,11 +331,17 @@ console.log(unique)
 console.log(count)
 
       //
+ 
+function sortProducts(){
+  let sortedProducts=products.sort((a,b)=>a.id-b.id)
+  console.log(sortedProducts)
 
+}
       
   
 
       //find unique elements in an array
     </script>
+   
   </body>
 </html>
